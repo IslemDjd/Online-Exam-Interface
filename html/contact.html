@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="shortcut icon" href="../icons/contact.png" type="image/x-icon">
+    <title>Contactez Nous</title>
+</head>
+
+<body>
+    <nav>
+        <div id="logo_title">
+            <a href="home.html"><img id="logo" src="../icons/Badji.png" alt=""></a>
+            <div>
+                <h1>DEPARTEMENT DE L'INFORMATIQUE</h1>
+                <h4>Faculté De Technologie</h4>
+            </div>
+        </div>
+
+        <div id="btn" class="nav_btn" style="align-self: center;">
+            <a href="home.html" id="contactez">Acceuil</a>
+        </div>
+        
+        <img id="open" class="toggle" src="../icons/icon-hamburger.svg" alt="">
+        <img id="close" src="../icons/icon-close.svg" alt="">
+    </nav>
+
+    <div class="frame">
+        <div class="left">
+            <img src="../images/support.jpg" alt="">
+        </div>
+
+        <div class="right">
+            <div class="card">
+                <span class="title">Signaler Un Probléme</span>
+                <form class="form" >
+                    <div class="group">
+                        <input placeholder="Nom" name="nom" type="text" required="">
+                        <label for="name">Nom</label>
+                    </div>
+                    <div class="group">
+                        <input placeholder="Prenom" name="prenom" type="text" required="">
+                        <label for="prenom">Prenom</label>
+                    </div>
+                    <div class="group">
+                        <input placeholder="Email" type="email" id="email" name="email" required="">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="group">
+                        <textarea placeholder="Que Vous Recontré ?" id="comment" name="comment" rows="5" required=""></textarea>
+                        <label for="comment">Que Vous Recontré ?</label>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="../js/respNav.js"></script>
+
+</html>

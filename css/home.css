@@ -1,0 +1,168 @@
+.frame{
+        display: flex;
+        justify-content: space-around;
+        width: 95%;
+        margin: 20px auto;
+        
+        .left{
+            width: 30%;
+            align-self: center;
+            
+            img{
+                width: 100%;
+            }
+        }
+        
+        .right{
+            width: 40%;
+            padding-left: 20px;
+
+            h2{
+                font-family: "MyFont2";
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            p{
+                font-family: "MyFont2";
+                font-size: 20px;
+
+            }
+
+            .inputs{
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .input-container {
+              --c-text: rgb(50, 50, 80);
+              --c-bg: rgb(252, 252, 252);
+              --c-outline: rgb(55, 45 , 190);
+              display: grid;
+              gap: 5px;
+              position: relative;
+              max-width: 300px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              color: black;
+            }
+
+            .input-field {
+              padding: 0.5em 0.75em;
+              border-radius: 0.2em;
+              border: 1px solid var(--c-border, currentColor);
+              color: var(--c-text);
+              font-size: 1rem;
+              letter-spacing: 0.1ch;
+              width: 100%;
+            }
+
+            .input-field:invalid {
+              --c-border: rgb(230, 85, 60);
+              /* --c-text: rgb(230, 85, 60); */
+              --c-outline: rgb(230, 85, 60);
+            }
+
+            .input-field:is(:disabled, :read-only) {
+              --c-border: rgb(150, 150, 150);
+              --c-text: rgb(170, 170, 170);
+            }
+
+            .input-field:is(:focus, :focus-visible) {
+              outline: 2px solid var(--c-outline);
+              outline-offset: 2px;
+            }
+
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .btn{
+                width: 100%;
+                display: flex;
+                justify-content: end;
+            }
+
+            button {
+              font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+              font-size: 17px;
+              padding: 0.5em 1.5em;
+              font-weight: 500;
+              background: #1F2937;
+              color: white;
+              border: none;
+              position: relative;
+              overflow: hidden;
+              border-radius: 0.6em;
+            }
+
+            .gradient {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              border-radius: 0.6em;
+              margin-top: -0.25em;
+              background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+            }
+
+            .label {
+              position: relative;
+              top: -1px;
+            }
+
+            .transition {
+              transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+              transition-duration: 500ms;
+              background-color: rgba(16, 185, 129, 0.6);
+              border-radius: 9999px;
+              width: 0;
+              height: 0;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            button:hover .transition {
+              width: 14em;
+              height: 14em;
+            }
+
+            button:active {
+              transform: scale(0.97);
+            }
+
+            
+
+        }
+    }
+
+
+@media screen and (min-width: 317px) and (max-width: 590px) {
+    .frame{
+        flex-direction: column;
+        .left{
+            width: 90%;
+        }
+        .right{
+            width: 90%;
+        }
+    }
+
+}
+
+@media screen and (max-width: 316px){
+    .frame{
+        flex-direction: column;
+        .left{
+            width: 90%;
+        }
+        .right{
+            width: 90%;
+        }
+    }
+}

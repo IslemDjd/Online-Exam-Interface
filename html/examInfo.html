@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/examInfo.css">
+    <link rel="shortcut icon" href="../icons/Badji1.png" type="image/x-icon">
+    <title>Examen Informations</title>
+</head> 
+
+<body>
+    <nav>
+        <div id="logo_title">
+            <a href="#"><img id="logo" src="../icons/Badji.png" alt=""></a>
+            <div>
+                <h1>DEPARTEMENT DE L'INFORMATIQUE</h1>
+                <h4>Faculté De Technologie</h4>
+            </div>
+        </div>
+        <div id="btn" class="nav_btn" style="align-self: center;">
+            <a href="contact.html" id="contactez">Contactez Nous</a>
+        </div>
+
+        <img id="open" class="toggle" src="../icons/icon-hamburger.svg" alt="">
+        <img id="close" src="../icons/icon-close.svg" alt="">
+    </nav>
+
+    <div class="card">
+        <h2>EXAMEN EN LIGNE</h2>
+        <h3>Interfaces Homme-Machine</h3>
+        <span>Chargé De Cour :</span>
+        <h4>Dr. Rouabhia Chahrazed</h4>
+
+        <div class="module">
+            <h5>Coefficient : 03</h5>
+            <h5>Crédit : 05</h5>
+            <h5>Année : 2023/2024</h5>
+        </div>
+
+        <!-- <button>
+            Commencer
+        </button> -->
+
+        <button id="start">
+            <span class="transition"></span>
+            <span class="gradient"></span>
+            <span class="label">Commencer</span>
+        </button>
+
+        <br><br>
+    </div>
+
+
+</body>
+<script src="../js/respNav.js"></script>
+<script>
+    const start = document.getElementById("start");
+    start.addEventListener("click", () => {
+        window.location.href = "exam.html";
+    });
+</script>
+</html>

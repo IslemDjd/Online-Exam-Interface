@@ -1,0 +1,176 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+@font-face {
+    font-family: "MyFont1";
+    src: url(../fonts/Kanit-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MyFont2";
+    src: url(../fonts/Afacad-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "MyFont1";
+}
+
+
+
+
+nav{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo_title{
+    display: flex;
+    div{
+        align-self: center;
+    }
+    
+    h1{
+        font-family: "MyFont1";
+        align-self: center;
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    
+    h4{
+        font-family: "MyFont2";
+        align-self: center;
+        margin-left: 10px;
+        letter-spacing: 0.7px;
+        font-size: 14px;
+    }
+    
+    #logo{
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+#contactez{
+    align-self: center;
+    text-decoration: none;
+    color: rgb(8, 8, 56);
+    font-family: "MyFont2";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-right: 20px;
+
+    &:hover{
+        color: #029155;
+        /* background-color: #25252512; */
+        transition: all 0.3s ease-in-out;
+        transform: scale(1.01);
+        /* box-shadow: 1px 1px 200px #252525; */
+    }
+}
+
+
+#open,#close{
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: none;
+    z-index: 100;
+    align-self: center;
+}
+
+.active{
+    background: rgba(101, 101, 101, 0.395);
+    /* background: rgba(255, 255, 255, 0.395); */
+    backdrop-filter: blur(10px);
+        width: 170px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        overflow: hidden;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+        animation: Drop 0.1s linear ;
+        animation-iteration-count: 1;
+        
+        #contactez{
+            font-size: 16px;
+            margin-top: 80px;            
+        }
+    }
+    @keyframes Drop {
+        0%   {right:-180px;}
+        10%   {right:-160px;}
+        20%   {right:-1400px;}
+        30%   {right:-120px;}
+        40%   {right:-100px;}
+        50%   {right:-80px;}
+        60%   {right:-60px;}
+        70%   {right:-40px;}
+        80%   {right:-20px;}
+        90%   {right: 0px;}
+        100%  {right:10px;}
+    }
+
+
+    
+    
+
+@media screen and (min-width: 317px) and (max-width: 590px) {
+    #logo_title{
+        h1{
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            width:100px;
+        }
+
+        h4{
+            font-size: 10px;
+        }
+    }
+
+    .nav_btn{
+        display: none;
+    }
+
+    #open{
+        display: block;
+        
+    }
+
+}
+
+@media screen and (max-width: 316px){
+    #logo_title{
+        h1{ 
+            width: 80px;
+            font-size: 8px;
+            font-weight: 600;
+        }
+        h4{
+            font-size: 6px;
+        }
+    }
+
+    .nav_btn{
+        display: none;
+    }
+
+    #open{
+        display: block;
+    }
+
+}
+

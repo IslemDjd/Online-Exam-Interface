@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="shortcut icon" href="../icons/Badji1.png" type="image/x-icon">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <div id="logo_title">
+            <a href="#"><img id="logo" src="../icons/Badji.png" alt=""></a>
+            <div>
+                <h1>DEPARTEMENT DE L'INFORMATIQUE</h1>
+                <h4>Faculté De Technologie</h4>
+            </div>
+        </div>
+        <div id="btn" class="nav_btn" style="align-self: center;">
+            <a href="contact.html" id="contactez">Contactez Nous</a>
+        </div>
+
+        <img id="open" class="toggle" src="../icons/icon-hamburger.svg" alt="">
+        <img id="close" src="../icons/icon-close.svg" alt="">
+    </nav>
+
+
+
+    <div class="frame">
+        <div class="left">
+            <img src="../images/1.jpg" alt="">
+        </div>
+        <div class="right">
+            <h2>Formulaire D'Informations</h2>
+            <p>Veuillez Remplir Tous Les Champs</p>
+
+            <form id="myForm" action="" method="">
+                <div class="inputs">
+                    <p class="input-container">
+                        <label for="nom">Nom</label>
+                        <input type="text" required placeholder="Entrer Votre Nom" name="nom" id="nom" class="input-field" autocomplete="name">
+                    </p>
+                    <br>
+                    <p class="input-container">
+                        <label for="prenom">Prenom</label>
+                        <input type="text" required placeholder="Entrer Votre Prenom" name="prenom" id="prenom" class="input-field" autocomplete="name">
+                    </p>
+                    <br>
+                    <p class="input-container">
+                        <label for="email">Email</label>
+                        <input type="email" required placeholder="Exemple@gmail.com" name="email" id="email" class="input-field" autocomplete="name">
+                    </p>
+                    <br>
+                    <p class="input-container">
+                        <label for="numIns">Numero D'Inscription</label>
+                        <input type="number" required minlength="8" placeholder="Entrer Votre Numero D'Inscription" name="numIns" id="numIns" class="input-field" autocomplete="name">
+                    </p>
+                </div>
+
+                <!-- <span id="error">ERROR</span> -->
+                <br>
+                <div class="btn">
+                    <button id="send" type="submit">
+                        <span class="transition"></span>
+                        <span class="gradient"></span>
+                        <span class="label">Envoyer</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="../js/respNav.js"></script>
+<script src="../js/formData.js"></script>
+</html>
