@@ -1,7 +1,7 @@
 .card {
   padding: 1px;
   width: 90%;
-  height: 1000px;
+  /* height: 1500px; */
   margin: 20px auto;
   border-radius: 20px;
   background: #fff;
@@ -59,16 +59,13 @@
       margin: 20px auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
       gap: 10px;
       background-color: transparent;
-    
+      
+      
       div{
-        /* height: 100px; */
         border-radius: 1em;
         background-color: rgb(240, 240, 240);
-        /* box-shadow: 1px 1px 30px #bebebe,
-                 -1px -1px 30px #ffffff; */
                  
                  .container{
                    padding: 10px 20px;
@@ -107,7 +104,7 @@
                     display: flex;
                     align-items: center;
                     padding: 0.375em 0.75em 0.375em 0.375em;
-                    border-radius: 99em;
+                    border-radius: 1em;
                     transition: 0.25s ease;
                     color: #414181;
                   }
@@ -129,20 +126,152 @@
                     box-shadow: inset 0 0 0 0.125em #00005c;
                   }
 
-        
       }
+
+      
     }
+
+
+    
 }
 
+.qst5{
+  grid-column: 1/3;
+  h5{
+    font-size: 18px;
+    margin: 15px;
+  }
+}
 
+.sousqst5{
+  display: flex;
+  justify-content: space-around;
+}
+#qst5{
+  grid-column: 1/3;
+  img{
+    width: 75%;
+    margin-left: 12.5%;
+  }
+}
 
+  .btn{
+    display: flex;
+    width: 90%;
+    justify-content: end;
+    margin: 40px 0;
+  }
+  button {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 17px;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    background: #1F2937;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+}
+
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+  .label {
+    position: relative;
+    top: -1px;
+}
+
+  .transition {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: rgba(16, 185, 129, 0.6);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+  button:hover .transition {
+    width: 14em;
+    height: 14em;
+}
+
+  button:active {
+    transform: scale(0.97);
+  }
 
 
 
 @media screen and (min-width: 317px) and (max-width: 590px) {
-    .header{
+    .card{  
+      .header{
+        flex-direction: column;
+      }
+    
+      .title{
+        h2{
+          font-size: 20px;
+        }
+      
+        h3{
+          font-size: 30px;
+        }
+      }
+
+    
+      .qst{
+        div{
+          grid-column: 1/3;
+          .container{
+            h4{
+              font-size: 16px;
+            }
+
+            label span {
+              font-size: 15px;
+            }
+
+            label span:before {
+              width: 0.9em;
+              height: 0.9em;
+            }
+            label input:checked + span:before {
+              box-shadow: inset 0 0 0 0.301em #00005c;
+            }
+          }
+        }
+  
+  
+      }
+
+    }
+
+    .sousqst5{
       flex-direction: column;
     }
+
+    .qst5{
+      grid-column: 1/3;
+    h5{
+      font-size: 14px;
+    }
+
+
+}
+
+    
 
 }
 
@@ -150,4 +279,17 @@
     .header{
       flex-direction: column;
     }
+
+    .qst{
+      div{
+        grid-column: 1/3;
+
+        .container label span {
+          font-size: 15px;
+        }
+      }
+
+
+    }
+    
 }
