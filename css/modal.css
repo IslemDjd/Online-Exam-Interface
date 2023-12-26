@@ -1,0 +1,56 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#333333b3;
+    z-index: 9;
+    display: none;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    height: 270px;
+    width: 50%;
+    min-width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 1em;
+    left: 50%;
+    top: 50%;
+    align-self: center;
+    transform: translate(-50%, -50%) scale(1);
+
+    p{
+        width: 90%;
+        margin: 20px auto;
+        font-size: 20px;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100px;
+        margin: 20px auto;
+        align-items: center;
+        justify-content: space-between;
+
+          .transition2 {
+            background-color: rgba(185, 16, 16, 0.6);
+          }
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .modal{
+        height: 300px;
+
+        p{
+            font-size: 16px;
+        }
+    }
+
+}
