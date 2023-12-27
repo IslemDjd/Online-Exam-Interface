@@ -82,3 +82,9 @@ checkCorrectCheckboxes(document.getElementsByName("check1"), 'qst6');
 checkCorrectCheckboxes(document.getElementsByName("check2"), 'qst7');
 checkCorrectCheckboxes(document.getElementsByName("check3"), 'qst8');
 checkCorrectCheckboxes(document.getElementsByName("check4"), 'qst9');
+
+
+const consult = document.getElementById("consultation");
+consult.addEventListener("click", () => {
+    window.location.href = "consultation.html";
+});

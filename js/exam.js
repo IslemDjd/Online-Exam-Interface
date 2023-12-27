@@ -115,6 +115,13 @@ function hidePopUpWarning(){
     errorPopUp_title.innerHTML = "";
 }
 
+
+document.addEventListener('keypress', function clikUp(){
+        if(event.key === 'Enter'){ 
+            showModal();
+        }
+});
+
 document.getElementById('examForm').addEventListener('submit', function (event) {
     // Prevent the default form submission
     event.preventDefault();
