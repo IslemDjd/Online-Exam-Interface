@@ -68,10 +68,8 @@ nav{
 
     &:hover{
         color: #029155;
-        /* background-color: #25252512; */
         transition: all 0.3s ease-in-out;
         transform: scale(1.01);
-        /* box-shadow: 1px 1px 200px #252525; */
     }
 }
 
@@ -88,7 +86,6 @@ nav{
 
 .active{
     background: rgba(101, 101, 101, 0.395);
-    /* background: rgba(255, 255, 255, 0.395); */
     backdrop-filter: blur(10px);
         width: 170px;
         display: block;

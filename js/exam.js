@@ -76,13 +76,7 @@ function hideModal() {
     overlay.style.display = 'none';
 }
 
-// function submitForm() {
-//     document.getElementById('examForm').submit();
-// }
-
 function submitForm() {
-    // Add any additional logic you need before submitting the form
-
     // Retrieve the form element
     var form = document.getElementById('examForm');
 
@@ -100,7 +94,26 @@ document.getElementById('envoyer').addEventListener('click', submitForm);
 
 
 
+const errorPopUp = document.getElementById("error");
+const errorPopUp_title = document.getElementById("error__title");
 
+
+function showPopUpWarning(ex , number){
+        setTimeout(function () {
+            errorPopUp.style.display = 'flex'
+            errorPopUp_title.innerHTML = `Veuillez Cocher une Case A Ex${ex} Question ${number}.`;
+        }, 0);
+        setTimeout(function () {
+            errorPopUp.style.display = 'none'
+            errorPopUp_title.innerHTML = "";
+        }, 5000);
+}
+
+
+function hidePopUpWarning(){
+    errorPopUp.style.display = 'none'
+    errorPopUp_title.innerHTML = "";
+}
 
 document.getElementById('examForm').addEventListener('submit', function (event) {
     // Prevent the default form submission
@@ -109,12 +122,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
     // Get the value of the checked radio button with name "radio1"
     var qst1 = document.getElementsByName("radio1");
     if (!isRadioCheched.call(qst1)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 1.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,1);
         return;
     }
     answers.qst1 = isRadioCheched.call(qst1);
@@ -122,12 +130,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst2 = document.getElementsByName("radio2");
     if (!isRadioCheched.call(qst2)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 2.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,2);
         return;
     }
     answers.qst2 = isRadioCheched.call(qst2);
@@ -135,12 +138,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst3 = document.getElementsByName("radio3");
     if (!isRadioCheched.call(qst3)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 3.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,3);
         return;
     }
     answers.qst3 = isRadioCheched.call(qst3);
@@ -148,12 +146,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst4 = document.getElementsByName("radio4");
     if (!isRadioCheched.call(qst4)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 4.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,4);
         return;
     }
     answers.qst4 = isRadioCheched.call(qst4);
@@ -161,12 +154,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
     
     var qst5A = document.getElementsByName("radio5");
     if (!isRadioCheched.call(qst5A)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 5A.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,'5A');
         return;
     }
     answers.qst5A = isRadioCheched.call(qst5A);
@@ -174,12 +162,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst5B = document.getElementsByName("radio6");
     if (!isRadioCheched.call(qst5B)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher une Case A Ex1 Question 5B.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(1,'5B');
         return;
     }
     answers.qst5B = isRadioCheched.call(qst5B);
@@ -187,12 +170,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst6 = document.getElementsByName("check1");
     if (!isAtLeastOneChecked.call(qst6)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher au Moins une Case Ex2 Question 1.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(2,1);
         return;
     }
     answers.qst6 = isCheckBox_Checked.call(qst6);
@@ -200,12 +178,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst7 = document.getElementsByName("check2");
     if (!isAtLeastOneChecked.call(qst7)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher au Moins une Case Ex2 Question 2.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(2,2);
         return;
     }
     answers.qst7 = isCheckBox_Checked.call(qst7);
@@ -213,12 +186,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst8 = document.getElementsByName("check3");
     if (!isAtLeastOneChecked.call(qst8)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher au Moins une Case Ex2 Question 3.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(2,3);
         return;
     }
     answers.qst8 = isCheckBox_Checked.call(qst8);
@@ -226,12 +194,7 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     var qst9 = document.getElementsByName("check4");
     if (!isAtLeastOneChecked.call(qst9)) {
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "Veuillez Cocher au Moins une Case Ex2 Question 4.";
-        }, 0);
-        setTimeout(function () {
-            document.getElementById("errorMsg").innerHTML = "";
-        }, 5000);
+        showPopUpWarning(2,4);
         return;
     }
     answers.qst9 = isCheckBox_Checked.call(qst9);

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/note.css">
-    <link rel="shortcut icon" href="../icons/contact.png" type="image/x-icon">
-    <title>Contactez Nous</title>
+    <link rel="shortcut icon" href="../icons/exam.png" type="image/x-icon">
+    <title>Note</title>
 </head>
 
 <body>
@@ -27,6 +27,25 @@
         <img id="open" class="toggle" src="../icons/icon-hamburger.svg" alt="">
         <img id="close" src="../icons/icon-close.svg" alt="">
     </nav>
+
+
+    <div class="card" onmouseover="cardHover(this)" onmouseout="cardUnHover(this)">
+        <div class="name">
+            <h3 id="nom"></h3>
+        </div>
+        <div class="note">
+            <h1 id="note"></h1>&nbsp;<span>/20</span>
+        </div>
+        <div id="mention"></div>
+
+        <button id="corrige">
+            <span class="transition"></span>
+            <span class="gradient"></span>
+            <span class="label">Voir Corrigé</span>
+        </button>
+    </div>
+
+    
 
 
 </body>

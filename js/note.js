@@ -1,3 +1,15 @@
+function cardHover(element) {
+    element.style.borderColor = myMentionColor;
+}
+
+function cardUnHover(element) {
+    element.style.borderColor = '';
+}
+
+var data = JSON.parse(localStorage.getItem('formData'));
+const nom = document.getElementById("nom");
+nom.innerHTML = data.nom + " " + data.prenom;
+
 var answers = JSON.parse(localStorage.getItem('answers')) || {
     qst1: '',
     qst2: '',
@@ -25,6 +37,8 @@ var correctAnswers = {
 };
 
 let note = 0;
+var mention = ['Trés Mal', 'Mal', 'Moyen', 'Bien' ,'Trés Bien', 'Excellent'];
+var mentioColor = ['#b30000', '#ff6666', '#cccc00', '#00e64d', '#008000', '#0000ff'];
 
 function calculateMarkOfRadioBox(note){
     
@@ -33,7 +47,6 @@ function calculateMarkOfRadioBox(note){
             break;
         }
         if (correctAnswers[j] === answers[j]){
-            // console.log(j);
             note += 2;
         }
     }
@@ -41,15 +54,13 @@ function calculateMarkOfRadioBox(note){
 }
 
 function calculateMarkOfCheckBox(note) {
-    // Check if the arrays have the same length
     const keys = ['qst6', 'qst7', 'qst8', 'qst9'];
-
+    
     for (let i in keys) {
         if (correctAnswers[keys[i]].length === answers[keys[i]].length) {
             let isEqual = true;
             for (let j = 0; j < correctAnswers[keys[i]].length; j++) {
                 if (correctAnswers[keys[i]][j] !== answers[keys[i]][j]) {
-                    // console.log(j);
                     isEqual = false;
                 }
             }
@@ -64,3 +75,55 @@ function calculateMarkOfCheckBox(note) {
 note = calculateMarkOfRadioBox(note);
 note = calculateMarkOfCheckBox(note);
 console.log("Ta Note est : " + note);   
+
+
+
+function whatMention(note){
+    if(note < 5){
+        return 0;
+    }
+    else{
+        if(note < 10){
+            return 1;
+        }
+        else{
+            if(note == 10){
+                return 2;
+            }
+            else{
+                if(note < 14){
+                    return 3;
+                }
+                else {
+                    if (note < 18) {
+                        return 4;
+                    }
+                    else {
+                        return 5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+const noteAffichage = document.getElementById("note");
+var myMention = mention[whatMention(note)];
+var myMentionColor = mentioColor[whatMention(note)];
+const mentionDiv = document.getElementById("mention");
+
+
+noteAffichage.innerHTML = note;
+noteAffichage.style.color = myMentionColor; 
+mentionDiv.innerHTML = myMention;
+mentionDiv.style.color = myMentionColor
+console.log(myMention);
+console.log(myMentionColor); 
+
+
+const seeCorrection = document.getElementById("corrige");
+seeCorrection.addEventListener("click", () => {
+    window.location.href = "correction.html";
+});
