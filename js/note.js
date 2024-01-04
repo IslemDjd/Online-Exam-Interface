@@ -74,7 +74,6 @@ function calculateMarkOfCheckBox(note) {
 
 note = calculateMarkOfRadioBox(note);
 note = calculateMarkOfCheckBox(note);
-console.log("Ta Note est : " + note);   
 
 
 
@@ -119,11 +118,10 @@ noteAffichage.innerHTML = note;
 noteAffichage.style.color = myMentionColor; 
 mentionDiv.innerHTML = myMention;
 mentionDiv.style.color = myMentionColor
-console.log(myMention);
-console.log(myMentionColor); 
 
 
 const seeCorrection = document.getElementById("corrige");
 seeCorrection.addEventListener("click", () => {
     window.location.href = "correction.html";
 });
+

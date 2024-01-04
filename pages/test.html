@@ -1,126 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10;
-            width: 50%;
-            min-width: 200px;
-            background-color: #ffffff;
-            border: 1px solid #000000;
-            border-radius: 1em;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Modal Content */
-        .modal-content {
-            border-radius: 1em;
-            background-color: #ede1e1;
-            margin: auto;
-            padding: 20px;
-            /* width: 80%; */
-        }
-
-        .modal button{
-            justify-content: center;
-            width: 30%;
-            margin: 30px auto;
-            /* margin: 10px auto; */
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }  
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .overlay{
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 9;
-            background-color: #00000044;
-            display: none;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
+    <form id="myForm" action="">
 
-    <h2>Modal Example</h2>
+        <label for="prenom">Prenom</label>
+        <input type="text" name="prenom" id="prenom" required>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-    <div class="overlay" id="overlay"></div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" required>
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-        </div>
-
-        <button type="submit">send</button>
-
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        var overlay = document.getElementById("overlay");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-            overlay.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            overlay.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == overlay) {
-                modal.style.display = "none";
-                overlay.style.display = "none";
-            }
-        }
-    </script>
-
-    
-
+        <button type="submit">submit</button>
+    </form>
 </body>
-
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        var formData = new FormData(event.target);
+        formData.forEach(function(value,key){
+            console.log(key, value);
+        });
+    });
+</script>
 </html>

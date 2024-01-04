@@ -21,7 +21,7 @@
     left: 50%;
     top: 50%;
     align-self: center;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.9);
 
     p{
         width: 90%;

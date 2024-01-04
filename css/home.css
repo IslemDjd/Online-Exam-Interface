@@ -16,12 +16,22 @@
         .right{
             width: 40%;
             padding-left: 20px;
+            background: rgb(255, 255, 255);
+            border-radius: 0.7em;
+            box-shadow: 0 0 2em #00000035;
+            transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: rgb(250, 250, 250) 0.2em solid;
+            /* width: 70%; */
+            /* margin: 20px auto; */
+            /* text-align: center; */
+
+            
 
             h2{
                 font-family: "MyFont2";
                 font-size: 30px;
                 text-align: center;
-                margin-bottom: 20px;
+                margin: 30px 0 20px 0;
             }
             
             p{
@@ -42,7 +52,7 @@
               display: grid;
               gap: 5px;
               position: relative;
-              max-width: 300px;
+              max-width: 350px;
               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
               color: black;
             }
@@ -82,7 +92,8 @@
             .btn{
                 width: 100%;
                 display: flex;
-                justify-content: end;
+                justify-content: center;
+                margin-bottom: 30px;
             }
 
             button {
@@ -141,6 +152,10 @@
         }
     }
 
+    .right:hover {
+      border: rgb(10, 152, 105) 0.2em solid;
+    }
+
 
 @media screen and (min-width: 317px) and (max-width: 590px) {
     .frame{
@@ -150,6 +165,8 @@
         }
         .right{
             width: 90%;
+            margin: 20px auto;
+            padding: 0;
         }
     }
 

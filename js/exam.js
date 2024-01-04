@@ -1,4 +1,11 @@
+function isExamPassed(){
+    if (data.isExamPassed === "rwz5CYjh@ZCxu6u"){
+        window.location.href = "note.html";
+    }
+};
+
 var data = JSON.parse(localStorage.getItem('formData'));
+isExamPassed();
 
 const nom = document.getElementById("nom");
 const prenom = document.getElementById("prenom");
@@ -20,6 +27,7 @@ jour.innerHTML = "Le : <span>" + currentDate.getDate() + " " + monthAbbreviation
 heure.innerHTML = "Début a : <span>" + currentDate.getHours() + ":" + currentDate.getMinutes() + "</span>";
 annee.innerHTML = "Année : <span>" + currentDate.getFullYear() + "/" + (currentDate.getFullYear()+1)  + "</span>";
 
+
 var answers = JSON.parse(localStorage.getItem('answers')) || {
     qst1 : '',
     qst2 : '',
@@ -32,6 +40,9 @@ var answers = JSON.parse(localStorage.getItem('answers')) || {
     qst8 : [],
     qst9 : []
 };
+
+
+
 
 
 function isRadioCheched(){
@@ -209,7 +220,9 @@ document.getElementById('examForm').addEventListener('submit', function (event) 
 
     // Save answers to localStorage
     localStorage.setItem('answers', JSON.stringify(answers));
-
+    
+    data.isExamPassed = "rwz5CYjh@ZCxu6u";
+    localStorage.setItem('formData', JSON.stringify(data));
     window.location.href = 'note.html';
 
 });

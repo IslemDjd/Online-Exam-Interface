@@ -2,8 +2,11 @@ var formData = JSON.parse(localStorage.getItem('formData')) || {
     nom: '',
     prenom: '',
     email: '',
-    numIns: ''
+    numIns: '',
+    isExamPassed: 'rwz5CNjh@ZCxu6u'
 };
+
+
 
 // Populate form fields with stored data
 document.getElementById('nom').value = formData.nom;
@@ -23,6 +26,7 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
 
     // Log the form data to the console
     console.log(formData);
+
 
     // Save formData to localStorage
     localStorage.setItem('formData', JSON.stringify(formData));
